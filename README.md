@@ -26,7 +26,7 @@ Lets view the graph.
 ```
 plot(G1)
 ```
-(insert image 1a here)
+![example_1a](https://user-images.githubusercontent.com/26914851/33787254-4f7a0888-dc21-11e7-9e6d-75603191fce3.png)
 
 Next we apply the edge sharpening procedure. The `sharpenEdgeWeights` takes four parameters, the weighted `network` object, the length of the longest walk k, 
 the number of iteration steps the algorithm should take and whether or not to plot the histogram of edge weights. The edge weight histogram is used to 
@@ -37,7 +37,8 @@ function.
 ```
 results <- sharpenEdgeWeights(G1, k = 3, steps = 4, plot = TRUE)
 ```
-(insert image 1b here)
+![example_1b](https://user-images.githubusercontent.com/26914851/33787265-5e66f126-dc21-11e7-8ad5-97f6cc4936b5.png)
+
 Next we use the `findClusters` method using the cutoff of 0.97 used by the authors for this example.
 ```
 new_G1 <- findClusters(results, method = "deletion", cutoff = 0.97, plot = TRUE)
@@ -46,7 +47,8 @@ When the `findClusters` uses the "deletion" method, a named list is returned con
 ```
 plot(new_G1$graph)
 ```
-(insert image 1c here)
+
+![example_1c](https://user-images.githubusercontent.com/26914851/33787300-7a7b8a5c-dc21-11e7-9d19-4c5b9a34d2f4.png)
 
 ### Hierarchical Clustering
 
@@ -61,21 +63,22 @@ plot(G2)
 # sharpen edge weights
 results <- sharpenEdgeWeights(G2, plot = FALSE)
 ```
-(insert image 2a here)
+![example_2a](https://user-images.githubusercontent.com/26914851/33787321-8ed4001a-dc21-11e7-84ea-039c2bbc299e.png)
+
 
 We can see there are three obvious clusters. We apply the two hierarchical clustering methods to find them. First we apply single linkage clustering
 on the graph.
 ```
 results_1 <- findClusters(results, method = "single", plot = TRUE)
 ```
-(insert image 2b)
+![example_2b](https://user-images.githubusercontent.com/26914851/33787337-99068db4-dc21-11e7-84e2-56ed0e9921c2.png)
 
 Next lets apply the normalized edge weight sum method.
 
 ```
 results_2 <- findClusters(results, method = "normalized", plot = TRUE)
 ```
-(insert image 2c)
+![example_2c](https://user-images.githubusercontent.com/26914851/33787342-a2300de8-dc21-11e7-93b2-5b61357a7411.png)
 
 
 
