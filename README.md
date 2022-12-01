@@ -1,3 +1,5 @@
+NOTE: This repository has been superceeded by the [Rwclust package](https://github.com/csprock/rwclust)
+
 # weighted_graph_clustering
 This repository contains an implementation of the weighted graph clustering algorithm based on random walks developed by Harel and Koren (http://www.wisdom.weizmann.ac.il/~harel/papers/Clustering_FSTTCS.pdf).
 
